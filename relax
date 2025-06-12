@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Việc Nhỏ Cho Hai Người</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fffafc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #c2185b;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    p.intro {
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 12px 24px;
+      background: #f06292;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #d81b60;
+    }
+
+    #task {
+      margin-top: 30px;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      font-size: 22px;
+      color: #333;
+      min-width: 300px;
+      max-width: 400px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💑 Việc Nhỏ Cho Hai Người</h1>
+  <p class="intro">Hãy bấm nút để chọn một điều nhẹ nhàng cùng nhau làm tối nay nhé!</p>
+  <button onclick="drawTask()">🎲 Rút việc</button>
+
+  <div id="task"></div>
+
+  <script>
+    const tasks = [
+      "🥛 Pha cho nhau một cốc sữa nóng hoặc một ly trà chanh mát lạnh",
+      "🗣️ Ngồi xuống và trao đổi với nhau về chuyện đã xảy ra hôm nay",
+      "🎬 Chọn một tập phim bất kỳ và cùng nhau xem",
+      "📱 Cùng nhau nằm xem TikTok một lúc cho vui",
+      "💆‍♀️ Time to massage – mỗi người 5 phút thư giãn nhẹ nhàng"
+    ];
+
+    function drawTask() {
+      const task = tasks[Math.floor(Math.random() * tasks.length)];
+      document.getElementById("task").innerText = task;
+    }
+  </script>
+</body>
+</html>
