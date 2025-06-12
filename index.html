@@ -55,6 +55,12 @@
       min-width: 300px;
       max-width: 400px;
     }
+
+    #task img {
+      max-width: 100%;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
   </style>
 </head>
 <body>
@@ -67,16 +73,34 @@
 
   <script>
     const tasks = [
-      "🥛 Pha cho nhau một cốc sữa nóng hoặc một ly trà chanh mát lạnh",
-      "🗣️ Ngồi xuống và trao đổi với nhau về chuyện đã xảy ra hôm nay",
-      "🎬 Chọn một tập phim bất kỳ và cùng nhau xem",
-      "📱 Cùng nhau nằm xem TikTok một lúc cho vui",
-      "💆‍♀️ Time to massage – mỗi người 5 phút thư giãn nhẹ nhàng"
+      {
+        text: "🥛 Pha cho nhau một cốc sữa nóng hoặc một ly trà chanh mát lạnh",
+        image: "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmV3MmQ3cGk2d2pkYnRwcW0wZGc3MWFsYmFkdDlmc3o4aDllc2E0ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/10EsiPBJiivKaQ/giphy.gif"
+      },
+      {
+        text: "🗣️ Ngồi xuống và trao đổi với nhau về chuyện đã xảy ra hôm nay",
+        image: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExejV5aGE4cmt5Z2NoZnJvOXNmd2R0MGJwejdreWZ2Y3lzZnI1ejZtMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/HMSLfCl5BsXoQ/giphy.gif"
+      },
+      {
+        text: "🎬 Chọn một tập phim bất kỳ và cùng nhau xem",
+        image: "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGt1NnY3Zmc1OGZrZDIwN2s5YjFvc2hwY2pnYjJrYno3b215MmFidyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0nv47tovIyA613qZrW/giphy.gif"
+      },
+      {
+        text: "📱 Cùng nhau nằm xem TikTok một lúc cho vui nào",
+        image: "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWlwOTNscXZmNWNlNmw1eTVkbjc2ZjNjaXdsdjM3NDN2bzRmdHA2bCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/52F9eVNiorHmgBCq1p/giphy.gif"
+      },
+      {
+        text: "💆‍♀️ Time to massage – mỗi người 5 phút thư giãn nhẹ nhàng nhé hị hị hị",
+        image: "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExamwxcmYxZ240Y3p0Zm51a3I5dm80Z3lxcDBkdThhZnRucTdnano5MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aC45M5Q4D07Pq/giphy.gif"
+      }
     ];
 
     function drawTask() {
       const task = tasks[Math.floor(Math.random() * tasks.length)];
-      document.getElementById("task").innerText = task;
+      document.getElementById("task").innerHTML = `
+        <p>${task.text}</p>
+        <img src="${task.image}" alt="gif">
+      `;
     }
   </script>
 </body>
